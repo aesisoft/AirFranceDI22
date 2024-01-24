@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="ClientAirFranceDI22.Views.Vols.ucGridVols"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:Views="clr-namespace:ClientAirFranceDI22.Views">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Views:ucSearchVols Grid.Row="0" />
+        <Views:ucNbVols     Grid.Row="1" Margin="0 20 0 10" />
+        <Views:UcListeVols  Grid.Row="2" />
+    </Grid>
+</UserControl>

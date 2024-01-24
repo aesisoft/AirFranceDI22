@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="ClientAirFranceDI22.Views.Clients.ucGridClients"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <Button Content="Ajouter client" HorizontalAlignment="Center"
+               VerticalAlignment="Center" Click="Button_Click" />
+
+
+    </Grid>
+</UserControl>

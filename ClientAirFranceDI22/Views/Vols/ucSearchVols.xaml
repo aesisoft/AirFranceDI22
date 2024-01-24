@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="ClientAirFranceDI22.Views.ucSearchVols"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel Orientation="Horizontal">
+        <TextBlock Text="Rechercher les vols du " VerticalAlignment="Center" />
+        <DatePicker SelectedDateFormat="Short" x:Name="dtpDate" VerticalAlignment="Center" Margin="10 0" />
+        <Button Content="Ok" Click="Search_Click" VerticalAlignment="Center" />
+        <TextBlock x:Name="msgError" Text="Votre date est dépassée. Veuillez choisir une autre date ..."
+           Visibility="Collapsed" VerticalAlignment="Center" Margin="20 0 0 0" />
+    </StackPanel>   
+
+</UserControl>

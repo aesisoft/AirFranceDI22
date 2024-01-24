@@ -1,0 +1,74 @@
+@AirFranceAPI_HostAddress = https://localhost:7139
+
+###
+
+GET {{AirFranceAPI_HostAddress}}/api/vols/
+Accept: application/json
+
+###
+
+GET {{AirFranceAPI_HostAddress}}/api/vols/search/2024-01-05
+Accept: application/json
+
+###
+
+GET {{AirFranceAPI_HostAddress}}/api/vols/1
+Accept: application/json
+
+###
+
+POST {{AirFranceAPI_HostAddress}}/api/vols/
+Content-Type: application/json
+
+{
+    "numeroVol": "A002",
+    "ouvertResa": true,
+    "dateHeureDepart": "2024-01-04T11:00:00.000Z",
+    "dateHeureArrivee": "2024-01-04T12:00:00.000Z",
+    "compagnieId": 1,
+    "aeroportDepartId": 2,
+    "aeroportArriveeId": 1    
+  }
+###
+
+POST {{AirFranceAPI_HostAddress}}/api/clients/
+Content-Type: application/json
+
+{
+  "nom": "GOLADE",
+  "prenom": "Larry",
+  "codeClient": "C1056"
+}
+
+###
+
+POST {{AirFranceAPI_HostAddress}}/api/passagers/
+Content-Type: application/json
+
+{
+  "nom": "GOLADE",
+  "prenom": "Larry",
+  "pieceIdentite" : "GF15454786565487666569"
+}
+
+###
+
+
+POST {{AirFranceAPI_HostAddress}}/api/reservations/
+Content-Type: application/json
+
+{
+  "reference": "RESA001",
+  "etat": 0,
+  "dateReservation": "2024-01-03T09:04:58.182Z",
+  "volId": 1,
+  "clientId": 1,
+  "passagerId": 2
+}
+
+###
+
+
+GET {{AirFranceAPI_HostAddress}}/api/reservations
+
+###

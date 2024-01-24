@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Clients\ucGridClients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Vols\ucGridVols.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Vols\UcListeVols.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Vols\ucNbVols.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Vols\ucSearchVols.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Clients\ucGridClients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Vols\ucGridVols.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Vols\UcListeVols.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Vols\ucNbVols.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Vols\ucSearchVols.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

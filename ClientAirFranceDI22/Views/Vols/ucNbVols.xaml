@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="ClientAirFranceDI22.Views.ucNbVols"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+    <StackPanel Orientation="Horizontal">
+        <materialDesign:PackIcon Kind="Airplane" FontWeight="Bold" />
+        <TextBlock Text="{Binding NombreListeVols}" FontWeight="Bold" />
+        <TextBlock Text=" vols" FontWeight="Bold" />
+    </StackPanel>
+</UserControl>

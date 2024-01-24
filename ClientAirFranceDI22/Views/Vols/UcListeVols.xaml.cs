@@ -30,7 +30,7 @@ namespace ClientAirFranceDI22.Views
         {
             var button = (Button)sender;
             var vm = (VolLightViewModel)button.DataContext;
-            vm.DetailVisible = Visibility.Visible;
+            MainViewModel.Instance.AfficherUnVol(vm);
         }
     }
 }

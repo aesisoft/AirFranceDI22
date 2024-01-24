@@ -10,6 +10,9 @@
     <Compile Update="Views\Clients\ucGridClients.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Vols\ucDetailVol.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Vols\ucGridVols.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Clients\ucGridClients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Vols\ucDetailVol.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Vols\ucGridVols.xaml">

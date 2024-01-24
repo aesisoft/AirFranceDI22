@@ -7,7 +7,7 @@ Accept: application/json
 
 ###
 
-GET {{AirFranceAPI_HostAddress}}/api/vols/search/2024-01-05
+GET {{AirFranceAPI_HostAddress}}/api/vols/search/2024-01-30
 Accept: application/json
 
 ###

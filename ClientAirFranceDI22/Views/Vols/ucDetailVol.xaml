@@ -1,0 +1,8 @@
+﻿<UserControl x:Class="ClientAirFranceDI22.Views.Vols.ucDetailVol"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Margin="20">
+        <TextBlock Text="{Binding Vol.Id}" 
+                   HorizontalAlignment="Left" VerticalAlignment="Top" />
+    </Grid>
+</UserControl>

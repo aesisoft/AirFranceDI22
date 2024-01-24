@@ -17,7 +17,6 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
-                        <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding Horaires}" FontWeight="Bold" />
                     <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding Vol.Depart}" Margin="40 0 0 0" />
@@ -33,18 +32,6 @@
                     <Button Grid.Row="0" Grid.RowSpan="3" Grid.Column="3" 
                             Content="Voir les détails du vol"
                             Click="Button_Click"/>
-                    
-                    <!-- détail du vol-->
-                    <Border Grid.Row="3" Grid.ColumnSpan="4" Visibility="{Binding DetailVisible}"
-                            BorderBrush="Blue" BorderThickness="1">
-                    <StackPanel Margin="20" Orientation="Horizontal" >
-                        <TextBlock Text="n°:" />
-                            <TextBlock Text="{Binding Vol.Id}" />
-                        <TextBlock Text="Compagnie :" Margin="40 0 0 0" />
-                            <TextBlock Text="{Binding Vol.Compagnie}" />
-                    </StackPanel>
-                    </Border>
-
                 </Grid>
             </DataTemplate>
         </ListBox.ItemTemplate>

@@ -27,7 +27,14 @@ public class VolsViewModel : BaseViewModel
         {
             foreach (var volLight in t.Result)
             {
-                ListeVols.Add(new VolLightViewModel(volLight));
+                try
+                {
+                    ListeVols.Add(new VolLightViewModel(volLight));
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine(ex);
+                }
             }
 
             OnPropertyChanged(nameof(NombreListeVols));

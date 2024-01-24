@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirFranceAPI", "AirFranceAP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientAirFranceDI22", "ClientAirFranceDI22\ClientAirFranceDI22.csproj", "{AD41F1E3-87D4-41F8-AC7A-42B5DD5E5B66}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientConsoleTest", "ClientConsoleTest\ClientConsoleTest.csproj", "{197E41FF-5EE6-4AF6-9959-3C0E2CF154B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{AD41F1E3-87D4-41F8-AC7A-42B5DD5E5B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD41F1E3-87D4-41F8-AC7A-42B5DD5E5B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD41F1E3-87D4-41F8-AC7A-42B5DD5E5B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{197E41FF-5EE6-4AF6-9959-3C0E2CF154B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197E41FF-5EE6-4AF6-9959-3C0E2CF154B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197E41FF-5EE6-4AF6-9959-3C0E2CF154B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197E41FF-5EE6-4AF6-9959-3C0E2CF154B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

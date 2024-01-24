@@ -1,9 +1,19 @@
 using AirFranceAPI.Middleware;
 using AirFranceDI22Model.Context;
+using AirFranceDI22Model.Dao;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NLog.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(IdentityConstants.ApplicationScheme)
+    .AddIdentityCookies();
+builder.Services.AddAuthorizationBuilder();
+
+builder.Services.AddIdentityCore<User>()
+    .AddEntityFrameworkStores<AirFranceDI22Context>()
+    .AddApiEndpoints();
 
 //chaine de connexion
 string connexionString = builder.Configuration.GetConnectionString("MainConnexionString") ??
@@ -25,6 +35,8 @@ builder.Logging.ClearProviders();
 builder.Logging.AddNLog("NLog.config");
 
 var app = builder.Build();
+
+app.MapIdentityApi<User>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

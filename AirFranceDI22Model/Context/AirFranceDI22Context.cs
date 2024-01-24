@@ -1,14 +1,11 @@
 ﻿using AirFranceDI22Model.Dao;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace AirFranceDI22Model.Context;
-public class AirFranceDI22Context : DbContext
+public class AirFranceDI22Context(DbContextOptions<AirFranceDI22Context> options) 
+    : IdentityDbContext<User>(options)
 {
-    public AirFranceDI22Context() { }
-
-    public AirFranceDI22Context(DbContextOptions<AirFranceDI22Context> options) : base(options)
-    {
-    }
     public DbSet<Aeroport> Aeroports { get; set; }
     public DbSet<Client> Clients { get; set; }
     public DbSet<Compagnie> Compagnies { get; set; }

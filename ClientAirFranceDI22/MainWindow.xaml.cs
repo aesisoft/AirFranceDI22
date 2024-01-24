@@ -1,4 +1,5 @@
-﻿using ClientAirFranceDI22.ViewModels;
+﻿using ClientAirFranceDI22.Services;
+using ClientAirFranceDI22.ViewModels;
 using ClientAirFranceDI22.Views.Clients;
 using ClientAirFranceDI22.Views.Vols;
 using MaterialDesignThemes.Wpf;
@@ -14,6 +15,8 @@ public partial class MainWindow : Window
         InitializeComponent();
 
         this.DataContext = MainViewModel.Instance;
+
+        Task.Run(async() =>  await HttpClientService.Login("nadine.clavere@equadex.net", "MotDePasse@2024"));
     }
 
     private void MenuVols_Click(object sender, RoutedEventArgs e)

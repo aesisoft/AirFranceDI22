@@ -1,6 +1,7 @@
 ﻿using AirFranceDI22Model.Dao;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 
 namespace AirFranceDI22Model.Context;
 public class AirFranceDI22Context(DbContextOptions<AirFranceDI22Context> options) 
@@ -15,4 +16,17 @@ public class AirFranceDI22Context(DbContextOptions<AirFranceDI22Context> options
     public DbSet<Ville> Villes { get; set; }
     public DbSet<Vol> Vols { get; set; }
 
+}
+
+
+public class AirFranceDI22ContextFactory : IDesignTimeDbContextFactory<AirFranceDI22Context>
+{
+    public AirFranceDI22Context CreateDbContext(string[] args)
+    {
+        var connexionString = "server=localhost;port=3306;userid=root;password=;database=AirFranceDI22;";
+        var optionsBuilder = new DbContextOptionsBuilder<AirFranceDI22Context>();
+        optionsBuilder.UseMySql(connexionString, ServerVersion.AutoDetect(connexionString));
+
+        return new AirFranceDI22Context(optionsBuilder.Options);
+    }
 }

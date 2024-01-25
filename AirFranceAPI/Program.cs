@@ -7,6 +7,7 @@ using NLog.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//configuration de l'authentification
 builder.Services.AddAuthentication(IdentityConstants.ApplicationScheme)
     .AddIdentityCookies();
 builder.Services.AddAuthorizationBuilder();
@@ -36,6 +37,7 @@ builder.Logging.AddNLog("NLog.config");
 
 var app = builder.Build();
 
+// Configure l'entité Identity
 app.MapIdentityApi<User>();
 
 // Configure the HTTP request pipeline.

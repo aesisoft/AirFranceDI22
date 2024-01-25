@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AirFranceDI22Model.Dao.Vol>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Créer un vol</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroVol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OuvertResa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateHeureDepart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateHeureArrivee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Compagnie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AeroportDepart)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AeroportArrivee)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroVol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OuvertResa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateHeureDepart)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateHeureArrivee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Compagnie.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AeroportDepart.Nom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AeroportArrivee.Nom)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Modifier</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Détails</a> |
+                @* <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

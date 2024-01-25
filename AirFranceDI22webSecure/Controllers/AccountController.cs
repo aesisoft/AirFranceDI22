@@ -14,7 +14,7 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
     }
 
     [HttpPost]
-    public async Task<IActionResult> Login(LoginVM model)
+    public async Task<IActionResult> Login(LoginViewModel model)
     {
         if (ModelState.IsValid)
         {
@@ -38,16 +38,14 @@ public class AccountController(SignInManager<User> signInManager, UserManager<Us
     }
 
     [HttpPost]
-    public async Task<IActionResult> Register(RegisterVM model)
+    public async Task<IActionResult> Register(RegisterViewModel model)
     {
         if (ModelState.IsValid)
         {
             User user = new()
             {
-                //Name = model.Name,
-                UserName = model.Email,
-                Email = model.Email,
-                //Address = model.Address
+                UserName = model.Name,
+                Email = model.Email
             };
 
             var result = await userManager.CreateAsync(user, model.Password!);

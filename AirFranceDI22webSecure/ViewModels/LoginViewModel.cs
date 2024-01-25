@@ -2,7 +2,7 @@
 
 namespace AirFranceDI22webSecure.ViewModels;
 
-public class LoginVM
+public class LoginViewModel
 {
     [Required(ErrorMessage ="Username is required.")]
     public string? Username { get; set; }

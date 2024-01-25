@@ -2,7 +2,7 @@
 
 namespace AirFranceDI22webSecure.ViewModels;
 
-public class RegisterVM
+public class RegisterViewModel
 {
     [Required]
     public string? Name { get; set; }
@@ -18,6 +18,4 @@ public class RegisterVM
     [DataType(DataType.Password)]
     public string? ConfirmPassword { get; set; }
 
-    [DataType(DataType.MultilineText)]
-    public string? Address { get; set; }
 }

@@ -1,0 +1,65 @@
+﻿@model AirFranceDI22Model.Dao.Vol
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Vol</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="NumeroVol" class="control-label"></label>
+                <input asp-for="NumeroVol" class="form-control" />
+                <span asp-validation-for="NumeroVol" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="OuvertResa" /> @Html.DisplayNameFor(model => model.OuvertResa)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateHeureDepart" class="control-label"></label>
+                <input asp-for="DateHeureDepart" class="form-control" />
+                <span asp-validation-for="DateHeureDepart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateHeureArrivee" class="control-label"></label>
+                <input asp-for="DateHeureArrivee" class="form-control" />
+                <span asp-validation-for="DateHeureArrivee" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CompagnieId" class="control-label"></label>
+                <select asp-for="CompagnieId" class="form-control" asp-items="ViewBag.CompagnieId"></select>
+                <span asp-validation-for="CompagnieId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AeroportDepartId" class="control-label"></label>
+                <select asp-for="AeroportDepartId" class="form-control" asp-items="ViewBag.AeroportDepartId"></select>
+                <span asp-validation-for="AeroportDepartId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AeroportArriveeId" class="control-label"></label>
+                <select asp-for="AeroportArriveeId" class="form-control" asp-items="ViewBag.AeroportArriveeId"></select>
+                <span asp-validation-for="AeroportArriveeId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

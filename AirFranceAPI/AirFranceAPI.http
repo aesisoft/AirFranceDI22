@@ -2,6 +2,17 @@
 
 ###
 
+POST {{AirFranceAPI_HostAddress}}/login?useCookies=true&useSessionCookies=false
+Content-Type: application/json
+
+{
+  "email": "nadine",
+  "password": "MotDePasse@2024"
+}
+
+
+###
+
 GET {{AirFranceAPI_HostAddress}}/api/vols/
 Accept: application/json
 

@@ -13,6 +13,7 @@ builder.Services.AddAuthentication(IdentityConstants.ApplicationScheme)
 builder.Services.AddAuthorizationBuilder();
 
 builder.Services.AddIdentityCore<User>()
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<AirFranceDI22Context>()
     .AddApiEndpoints();
 

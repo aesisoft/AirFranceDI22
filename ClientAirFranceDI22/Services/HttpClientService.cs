@@ -4,6 +4,8 @@ using ClientAirFranceDI22.Models;
 using ClientAirFranceDI22.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
+using System.Diagnostics;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Text;
@@ -15,13 +17,18 @@ namespace ClientAirFranceDI22.Services
     {
         private const string baseAddress = "https://localhost:7139/";
         private static HttpClient? client = null;
+        private static CookieContainer cookieContainer = new();
+
 
         private static HttpClient Client
         {
             get
             {
                 if (client == null)
-                    client = new() { BaseAddress = new Uri(baseAddress) };
+                {
+                    var handler = new HttpClientHandler() { CookieContainer = cookieContainer };
+                    client = new(handler) { BaseAddress = new Uri(baseAddress) };
+                }
                 return client;
             }
         }
@@ -37,8 +44,12 @@ namespace ClientAirFranceDI22.Services
 
             var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var response = await Client.PostAsync(route, httpContent);
+
+            var cookies = cookieContainer.GetCookies(new Uri(baseAddress));
+            Debug.WriteLine(cookies);
+
             return response.IsSuccessStatusCode ? true :
-                throw new Exception(response.ReasonPhrase);
+                throw new Exception(response.ReasonPhrase);            
         }
 
 
@@ -63,7 +74,7 @@ namespace ClientAirFranceDI22.Services
 
             var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
             var response = await Client.PostAsync(route, httpContent);
-            return response.IsSuccessStatusCode ? true : 
+            return response.IsSuccessStatusCode ? true :
                 throw new Exception(response.ReasonPhrase);
         }
 

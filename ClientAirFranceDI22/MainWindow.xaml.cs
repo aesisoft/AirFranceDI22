@@ -16,7 +16,7 @@ public partial class MainWindow : Window
 
         this.DataContext = MainViewModel.Instance;
 
-        Task.Run(async() =>  await HttpClientService.Login("nadine.clavere@equadex.net", "MotDePasse@2024"));
+        Task.Run(async() =>  await HttpClientService.Login("nadine", "MotDePasse@2024"));
     }
 
     private void MenuVols_Click(object sender, RoutedEventArgs e)

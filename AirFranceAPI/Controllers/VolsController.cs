@@ -8,6 +8,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AirFranceAPI.Controllers;
 
+
+/// <summary>
+/// API Rest généré a partir de l'entité Vol
+/// </summary>
 [Authorize]
 [Route("api/[controller]")]
 [ApiController]

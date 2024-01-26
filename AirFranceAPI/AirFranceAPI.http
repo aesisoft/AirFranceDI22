@@ -1,15 +1,48 @@
 @AirFranceAPI_HostAddress = https://localhost:7139
 
-###
+################################# SEEDS
+###  Création des roles
+GET {{AirFranceAPI_HostAddress}}/api/seeds/CreateRoles
+Accept: application/json
+
+###  Création des utilisateurs
+GET {{AirFranceAPI_HostAddress}}/api/seeds/CreateUsers
+Accept: application/json
+
+###  Création du  jeu de tests de démarrage
+GET {{AirFranceAPI_HostAddress}}/api/seeds/InitDatas
+Accept: application/json
+
+################################# LOGIN et CURRENT USER
 
 POST {{AirFranceAPI_HostAddress}}/login?useCookies=true&useSessionCookies=false
 Content-Type: application/json
 
 {
   "email": "nadine",
-  "password": "MotDePasse@2024"
+  "password": "123@Abc"
 }
 
+### Utilisateur courant
+GET {{AirFranceAPI_HostAddress}}/api/CurrentUser
+
+### Roles de l'uUtilisateur courant
+GET {{AirFranceAPI_HostAddress}}/api/CurrentUser/Roles
+
+################################# VOLS
+
+POST {{AirFranceAPI_HostAddress}}/api/vols/
+Content-Type: application/json
+
+{
+    "numeroVol": "A002",
+    "ouvertResa": true,
+    "dateHeureDepart": "2024-01-04T11:00:00.000Z",
+    "dateHeureArrivee": "2024-01-04T12:00:00.000Z",
+    "compagnieId": 1,
+    "aeroportDepartId": 2,
+    "aeroportArriveeId": 1    
+  }
 
 ###
 
@@ -26,22 +59,10 @@ Accept: application/json
 GET {{AirFranceAPI_HostAddress}}/api/vols/1
 Accept: application/json
 
-###
 
-POST {{AirFranceAPI_HostAddress}}/api/vols/
-Content-Type: application/json
+################################# FAIRE UNE RESERVATION
 
-{
-    "numeroVol": "A002",
-    "ouvertResa": true,
-    "dateHeureDepart": "2024-01-04T11:00:00.000Z",
-    "dateHeureArrivee": "2024-01-04T12:00:00.000Z",
-    "compagnieId": 1,
-    "aeroportDepartId": 2,
-    "aeroportArriveeId": 1    
-  }
-###
-
+### Créer un client
 POST {{AirFranceAPI_HostAddress}}/api/clients/
 Content-Type: application/json
 
@@ -51,8 +72,7 @@ Content-Type: application/json
   "codeClient": "C1056"
 }
 
-###
-
+### Créer un passager
 POST {{AirFranceAPI_HostAddress}}/api/passagers/
 Content-Type: application/json
 
@@ -62,9 +82,7 @@ Content-Type: application/json
   "pieceIdentite" : "GF15454786565487666569"
 }
 
-###
-
-
+### Créer une réservation
 POST {{AirFranceAPI_HostAddress}}/api/reservations/
 Content-Type: application/json
 
@@ -77,9 +95,7 @@ Content-Type: application/json
   "passagerId": 2
 }
 
-###
-
-
+### Voir les réservations
 GET {{AirFranceAPI_HostAddress}}/api/reservations
 
 ###

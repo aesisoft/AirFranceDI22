@@ -6,7 +6,7 @@ HttpClient client = new() { BaseAddress = new Uri(baseAddress) };
 
 
 // Login
-var jsonString = "{ \"email\": \"nadine.clavere@equadex.net\", \"password\": \"MotDePasse@2024\" }";
+var jsonString = "{ \"email\": \"nadine\", \"password\": \"123@Abc\" }";
 var httpContent = new StringContent(jsonString, Encoding.UTF8, "application/json");
 var response = await client.PostAsync("login?useCookies=true&useSessionCookies=true", httpContent);
 Console.WriteLine(response);
